@@ -1,5 +1,7 @@
 package com.example.meu_portfolio
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,9 +9,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,6 +28,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -94,8 +100,8 @@ fun Inicio() {
             )
             Text(
                 "Desenvolvedor Mobile",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.SemiBold,
+                fontSize = 25.sp,
+                fontWeight = FontWeight.Bold,
                 color = Color.White,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -111,9 +117,50 @@ fun Inicio() {
                     .fillMaxWidth()
                     .padding(start = 30.dp, end = 20.dp)
             )
+
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .padding(top = 20.dp)
+            ) {
+                assets(
+                    painter = painterResource(R.drawable.github_logo),
+                    description = "github assets",
+                    link = "https://github.com/MuriloCoelho01"
+                )
+                assets(
+                    painter = painterResource(R.drawable.linkedin_logo),
+                    description = "linkedin assets",
+                    link = "https://www.linkedin.com/in/murilo-coelho-a13588282/"
+                )
+            }
+
+
         }
     }
 
+}
+
+@Composable
+fun assets(painter: Painter, description: String, link: String) {
+    val context = LocalContext.current
+
+    Image(
+        painter = painter,
+        contentDescription = "",
+        modifier = Modifier
+            .padding(horizontal = 25.dp)
+            .size(50.dp)
+            .clickable {
+                val url = link
+                if (url.startsWith("http://") || url.startsWith("https://")) {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    context.startActivity(intent)
+                }
+            }
+
+    )
 }
 
 @Preview(showBackground = true)
