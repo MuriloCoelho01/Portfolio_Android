@@ -29,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
@@ -74,23 +75,23 @@ fun Inicio() {
 
 
         ) {
-       Box(){
+            Box() {
 
-           Box(
-               modifier = Modifier
-                   .size(width = 170.dp, height = 170.dp)
-                   .border(8.dp, color = Color(0xff0A22BE), shape = RoundedCornerShape(20.dp))
-           )
-           Image(
-               painter = painterResource(R.drawable.foto_murilo),
-               contentDescription = "foto Murilo",
-               modifier = Modifier
-                   .size(width = 170.dp, height = 170.dp)
-                   .offset(x = -20.dp, y = -20.dp)
-                   .clip(shape = RoundedCornerShape(20.dp))
-           )
+                Box(
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 170.dp)
+                        .border(8.dp, color = Color(0xff0A22BE), shape = RoundedCornerShape(20.dp))
+                )
+                Image(
+                    painter = painterResource(R.drawable.foto_murilo),
+                    contentDescription = "foto Murilo",
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 170.dp)
+                        .offset(x = -20.dp, y = -20.dp)
+                        .clip(shape = RoundedCornerShape(20.dp))
+                )
 
-       }
+            }
             Spacer(
                 modifier = Modifier
                     .padding(top = 30.dp)
@@ -161,12 +162,14 @@ fun Inicio() {
                             color = Color.White
                         )
                     ) {
-                        append("Sou um desenvolvedor apaixonado por criar soluções" +
-                                " tecnológicas que unem funcionalidade, inovação e " +
-                                "acessibilidade. Acredito que tecnologia deve ser inclusiva, " +
-                                "prática e impactar positivamente a vida das pessoas. Meu objetivo é " +
-                                "construir experiências que combinam design intuitivo com engenharia sólida, " +
-                                "sempre buscando excelência técnica e usabilidade.  \n \n")
+                        append(
+                            "Sou um desenvolvedor apaixonado por criar soluções" +
+                                    " tecnológicas que unem funcionalidade, inovação e " +
+                                    "acessibilidade. Acredito que tecnologia deve ser inclusiva, " +
+                                    "prática e impactar positivamente a vida das pessoas. Meu objetivo é " +
+                                    "construir experiências que combinam design intuitivo com engenharia sólida, " +
+                                    "sempre buscando excelência técnica e usabilidade.  \n \n"
+                        )
                     }
                     withStyle(
                         style = SpanStyle(
@@ -174,7 +177,7 @@ fun Inicio() {
                             color = Color.White,
                             fontWeight = FontWeight.Bold,
 
-                        )
+                            )
                     ) {
                         append("Atualmente, estou focado no desenvolvimento mobile")
                     }
@@ -184,12 +187,14 @@ fun Inicio() {
                             color = Color.White
                         )
                     ) {
-                        append(", criando aplicativos que oferecem interfaces amigáveis e " +
-                                "alto desempenho. Entre os projetos que desenvolvi, está um app " +
-                                "interativo que ajuda usuários a explorar gêneros de filmes de " +
-                                "forma divertida, além de plataformas educacionais que simulam entrevistas" +
-                                " e oferecem feedback personalizado para desenvolvedores em busca de " +
-                                "aprimoramento profissional. \n\n")
+                        append(
+                            ", criando aplicativos que oferecem interfaces amigáveis e " +
+                                    "alto desempenho. Entre os projetos que desenvolvi, está um app " +
+                                    "interativo que ajuda usuários a explorar gêneros de filmes de " +
+                                    "forma divertida, além de plataformas educacionais que simulam entrevistas" +
+                                    " e oferecem feedback personalizado para desenvolvedores em busca de " +
+                                    "aprimoramento profissional. \n\n"
+                        )
                     }
                     withStyle(
                         style = SpanStyle(
@@ -197,7 +202,7 @@ fun Inicio() {
                             color = Color.White,
                             fontWeight = FontWeight.Bold,
 
-                        )
+                            )
                     ) {
                         append("Tenho experiência em gestão de projetos, onde atuei como Product Owner (P.O.), ")
                     }
@@ -205,13 +210,15 @@ fun Inicio() {
                         style = SpanStyle(
                             fontSize = 14.sp,
                             color = Color.White,
-                            )
+                        )
                     ) {
-                        append("coordenando equipes multidisciplinares para garantir que os " +
-                                "projetos fossem entregues com qualidade e alinhados às necessidades dos" +
-                                " usuários e aos objetivos estratégicos. Conduzi iniciativas como o desenvolvimento de " +
-                                "uma plataforma educacional inclusiva, que integra materiais interativos, simulações " +
-                                "práticas e eventos voltados para acessibilidade e diversidade. ")
+                        append(
+                            "coordenando equipes multidisciplinares para garantir que os " +
+                                    "projetos fossem entregues com qualidade e alinhados às necessidades dos" +
+                                    " usuários e aos objetivos estratégicos. Conduzi iniciativas como o desenvolvimento de " +
+                                    "uma plataforma educacional inclusiva, que integra materiais interativos, simulações " +
+                                    "práticas e eventos voltados para acessibilidade e diversidade. "
+                        )
                     }
                     withStyle(
                         style = SpanStyle(
@@ -221,9 +228,11 @@ fun Inicio() {
 
                             )
                     ) {
-                        append("Minhas responsabilidades incluíram priorização do backlog, " +
-                                "alinhamento com stakeholders e liderança de processos de design e " +
-                                "desenvolvimento. \n\n")
+                        append(
+                            "Minhas responsabilidades incluíram priorização do backlog, " +
+                                    "alinhamento com stakeholders e liderança de processos de design e " +
+                                    "desenvolvimento. \n\n"
+                        )
                     }
                     withStyle(
                         style = SpanStyle(
@@ -231,13 +240,66 @@ fun Inicio() {
                             color = Color.White,
                         )
                     ) {
-                        append("No meu tempo livre, gosto de jogar" +
-                                " basquete, explorar novas tecnologias e transformar ideias em " +
-                                "projetos que gerem impacto. Sou movido pela curiosidade e pelo desejo constante d" +
-                                "e aprender e inovar. ")
+                        append(
+                            "No meu tempo livre, gosto de jogar" +
+                                    " basquete, explorar novas tecnologias e transformar ideias em " +
+                                    "projetos que gerem impacto. Sou movido pela curiosidade e pelo desejo constante d" +
+                                    "oe aprender e inovar. "
+                        )
                     }
                 }
             )
+
+            Text(
+                "Experiência",
+                fontSize = 35.sp,
+                fontWeight = FontWeight.ExtraBold,
+                color = Color.White,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 30.dp, end = 20.dp, top = 30.dp)
+            )
+
+            Box(
+                modifier = Modifier
+                    .border(2.5.dp, color = Color(0xff0A22BE) )
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.logo_de),
+                        contentDescription = "",
+                        modifier = Modifier
+                            .size(185.dp)
+
+                    )
+                    Row {
+                        Text(
+                            "Jul 2022 - Out - 2023  ",
+                            fontSize = 14.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                        )
+                        Text(
+                            "   Jovem aprendiz | Porto Seguro",
+                            fontSize = 14.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                    Text(
+                        "Suporte e assistência ao sênior, colaboração no desenvolvimento " +
+                                "e implementação de projetos, para melhorar prazos e qualidade dos " +
+                                "serviços da área. Utilizei Python para automatizar e manipular bases" +
+                                " de dados, além de criar dashboards gerenciais de projetos e de toda a" +
+                                " área no Power BI."
+                    )
+                }
+            }
 
         }
     }
