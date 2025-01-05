@@ -20,7 +20,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,7 +33,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -58,13 +63,15 @@ fun Inicio() {
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color(0xff0F172A))
+            .verticalScroll(rememberScrollState(0))
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 120.dp)
+                .padding(top = 130.dp)
+
 
         ) {
        Box(){
@@ -122,7 +129,7 @@ fun Inicio() {
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
-                    .padding(top = 20.dp)
+                    .padding(top = 30.dp)
             ) {
                 assets(
                     painter = painterResource(R.drawable.github_logo),
@@ -136,6 +143,101 @@ fun Inicio() {
                 )
             }
 
+            Text(
+                "Sobre",
+                fontSize = 35.sp,
+                fontWeight = FontWeight.ExtraBold,
+                color = Color.White,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 30.dp, end = 20.dp, top = 30.dp)
+            )
+            Text(modifier = Modifier
+                .padding(start = 30.dp, end = 20.dp),
+                text = buildAnnotatedString {
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White
+                        )
+                    ) {
+                        append("Sou um desenvolvedor apaixonado por criar soluções" +
+                                " tecnológicas que unem funcionalidade, inovação e " +
+                                "acessibilidade. Acredito que tecnologia deve ser inclusiva, " +
+                                "prática e impactar positivamente a vida das pessoas. Meu objetivo é " +
+                                "construir experiências que combinam design intuitivo com engenharia sólida, " +
+                                "sempre buscando excelência técnica e usabilidade.  \n \n")
+                    }
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+
+                        )
+                    ) {
+                        append("Atualmente, estou focado no desenvolvimento mobile")
+                    }
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White
+                        )
+                    ) {
+                        append(", criando aplicativos que oferecem interfaces amigáveis e " +
+                                "alto desempenho. Entre os projetos que desenvolvi, está um app " +
+                                "interativo que ajuda usuários a explorar gêneros de filmes de " +
+                                "forma divertida, além de plataformas educacionais que simulam entrevistas" +
+                                " e oferecem feedback personalizado para desenvolvedores em busca de " +
+                                "aprimoramento profissional. \n\n")
+                    }
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+
+                        )
+                    ) {
+                        append("Tenho experiência em gestão de projetos, onde atuei como Product Owner (P.O.), ")
+                    }
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White,
+                            )
+                    ) {
+                        append("coordenando equipes multidisciplinares para garantir que os " +
+                                "projetos fossem entregues com qualidade e alinhados às necessidades dos" +
+                                " usuários e aos objetivos estratégicos. Conduzi iniciativas como o desenvolvimento de " +
+                                "uma plataforma educacional inclusiva, que integra materiais interativos, simulações " +
+                                "práticas e eventos voltados para acessibilidade e diversidade. ")
+                    }
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+
+                            )
+                    ) {
+                        append("Minhas responsabilidades incluíram priorização do backlog, " +
+                                "alinhamento com stakeholders e liderança de processos de design e " +
+                                "desenvolvimento. \n\n")
+                    }
+                    withStyle(
+                        style = SpanStyle(
+                            fontSize = 14.sp,
+                            color = Color.White,
+                        )
+                    ) {
+                        append("No meu tempo livre, gosto de jogar" +
+                                " basquete, explorar novas tecnologias e transformar ideias em " +
+                                "projetos que gerem impacto. Sou movido pela curiosidade e pelo desejo constante d" +
+                                "e aprender e inovar. ")
+                    }
+                }
+            )
 
         }
     }
