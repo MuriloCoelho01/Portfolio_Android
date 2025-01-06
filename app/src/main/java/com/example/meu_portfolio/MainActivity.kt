@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -37,6 +38,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -225,7 +227,6 @@ fun Inicio() {
                             fontSize = 14.sp,
                             color = Color.White,
                             fontWeight = FontWeight.Bold,
-
                             )
                     ) {
                         append(
@@ -262,7 +263,9 @@ fun Inicio() {
 
             Box(
                 modifier = Modifier
-                    .border(2.5.dp, color = Color(0xff0A22BE) )
+                    .padding(start = 10.dp, end = 10.dp, top = 10.dp)
+                    .border(1.5.dp, color = Color(0xff0A22BE) )
+
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -274,29 +277,83 @@ fun Inicio() {
                         painter = painterResource(R.drawable.logo_de),
                         contentDescription = "",
                         modifier = Modifier
-                            .size(185.dp)
+                            .size(160.dp)
 
                     )
                     Row {
                         Text(
-                            "Jul 2022 - Out - 2023  ",
-                            fontSize = 14.sp,
+                            "Ago 2024 - Dez - 2024  -  ",
+                            fontSize = 13.sp,
+                            color = Color.White
+                        )
+                        Text(
+                            "Product Owner | Dev Empower",
+                            fontSize = 13.sp,
                             color = Color.White,
                             fontWeight = FontWeight.Bold,
                         )
+                    }
+                    Text(
+                        "Fui Product Owner com experiência em liderar projetos voltados " +
+                                "para acessibilidade e inclusão. Coordenei o desenvolvimento da DevEmpower," +
+                                " uma plataforma que prepara desenvolvedores para processos seletivos," +
+                                " com foco em diversidade e acessibilidade. A iniciativa oferece materiais " +
+                                "interativos, quizzes, simulações práticas e uma comunidade para networking," +
+                                " promovendo habilidades técnicas e interpessoais. Com parcerias estratégicas, " +
+                                "a plataforma é gratuita para os usuários, fortalecendo a inclusão no mercado de trabalho.",
+                        fontSize = 12.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 15.dp, end = 10.dp, top = 7.5.dp)
+                    )
+                }
+            }
+            Box(
+                modifier = Modifier
+                    .padding(start = 10.dp, end = 10.dp, top = 10.dp)
+                    .border(1.5.dp, color = Color(0xff0A22BE) )
+
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.logo_ps),
+                        contentDescription = "",
+                        modifier = Modifier
+                            .size(160.dp)
+
+                    )
+                    Row {
                         Text(
-                            "   Jovem aprendiz | Porto Seguro",
-                            fontSize = 14.sp,
+                            "Jul 2022 - Out - 2023  -  ",
+                            fontSize = 13.sp,
+                            color = Color.White
+                        )
+                        Text(
+                            "Jovem aprendiz | Porto Seguro",
+                            fontSize = 13.sp,
                             color = Color.White,
                             fontWeight = FontWeight.Bold,
                         )
                     }
                     Text(
                         "Suporte e assistência ao sênior, colaboração no desenvolvimento " +
-                                "e implementação de projetos, para melhorar prazos e qualidade dos " +
-                                "serviços da área. Utilizei Python para automatizar e manipular bases" +
-                                " de dados, além de criar dashboards gerenciais de projetos e de toda a" +
-                                " área no Power BI."
+                                "e implementação de projetos, para melhorar prazos e qualidade " +
+                                "dos serviços da área. Utilizei Python para automatizar e manipular " +
+                                "bases de dados, além de criar dashboards gerenciais de projetos e de" +
+                                " toda a área no Power BI.",
+                        fontSize = 12.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 15.dp, end = 10.dp, top = 7.5.dp)
                     )
                 }
             }
@@ -325,12 +382,4 @@ fun assets(painter: Painter, description: String, link: String) {
             }
 
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Meu_portfolioTheme {
-
-    }
 }
